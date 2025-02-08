@@ -1,5 +1,5 @@
 import Button from "./Button"
-import SearchBar from "./SearchBar"
+import Input from "./Input"
 
 const Header = () => {
 
@@ -9,11 +9,11 @@ const Header = () => {
                 <a className="text-3xl">PinIt</a>
             </div>
             <div>
-                <SearchBar/>
+                <Input/>
             </div>
             <div className="mx-2 flex gap-4">
-                <Button text={"Login"}/>
-                <Button text={"Sign Up"}/>
+                <Button text={"Login"} func={""}/>
+                <Button text={"Sign Up"} func={"signup"}/>
             </div>
         </div>
     )
