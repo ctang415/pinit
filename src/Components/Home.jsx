@@ -1,4 +1,5 @@
 import Header from "./Header"
+import Section from "./Section"
 import Tag from "./Tag"
 
 const Home = () => {
@@ -17,12 +18,8 @@ const Home = () => {
                     <Tag text={"Tag"}/>
                 </ul>
             </nav>
-            <div>
-                <h1>Collections</h1>
-            </div>
-            <div>
-                <h1>Images</h1>
-            </div>
+            <Section heading={"Collections"}/>
+            <Section heading={"Images"}/>
         </>
     )
 }
