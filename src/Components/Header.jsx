@@ -9,10 +9,10 @@ const Header = () => {
                 <a className="text-3xl">PinIt</a>
             </div>
             <div>
-                <Input/>
+                <Input type={"text"}/>
             </div>
             <div className="mx-2 flex gap-4">
-                <Button text={"Login"} func={""}/>
+                <Button text={"Login"} func={"login"}/>
                 <Button text={"Sign Up"} func={"signup"}/>
             </div>
         </div>

@@ -18,7 +18,11 @@ const Router = () => {
         {
           path: "/signup",
           element: <Form/>
-        }
+        }, 
+        {
+          path: "/login",
+          element: <Form/>
+        },
       ]
     }
   ])
