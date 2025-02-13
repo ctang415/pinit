@@ -18,8 +18,8 @@ const Home = () => {
                     <Tag text={"Tag"}/>
                 </ul>
             </nav>
-            <Section heading={"Collections"}/>
-            <Section heading={"Images"}/>
+            <Section collection={true} heading={"Collections"}/>
+            <Section collection={false} heading={"Images"}/>
         </>
     )
 }

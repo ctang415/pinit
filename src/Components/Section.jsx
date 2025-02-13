@@ -1,11 +1,11 @@
 import Display from "./Display"
 
-const Section = ({heading}) => {
+const Section = ({collection, heading}) => {
     return (
         <div>
             <h1 className="text-xl">{heading}</h1>
             <>
-            <Display/>
+            <Display collection={collection}/>
             </>
         </div>
     )
