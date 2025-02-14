@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <>
             <Header/>
-            <nav className="p-2">
+            <nav className="p-6">
                 <ul className="flex justify-evenly gap-4">
                     <Tag text={"Tag"}/>
                     <Tag text={"Tag"}/>
@@ -18,8 +18,10 @@ const Home = () => {
                     <Tag text={"Tag"}/>
                 </ul>
             </nav>
-            <Section collection={true} heading={"Collections"}/>
-            <Section collection={false} heading={"Images"}/>
+            <div className="p-6">
+                <Section collection={true} heading={"Collections"}/>
+                <Section collection={false} heading={"Images"}/>
+            </div>
         </>
     )
 }

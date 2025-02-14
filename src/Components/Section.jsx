@@ -2,8 +2,8 @@ import Display from "./Display"
 
 const Section = ({collection, heading}) => {
     return (
-        <div>
-            <h1 className="text-xl">{heading}</h1>
+        <div className="flex flex-col">
+            <h1 className="text-xl mb-6">{heading}</h1>
             <>
             <Display collection={collection}/>
             </>

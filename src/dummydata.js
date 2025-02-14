@@ -132,3 +132,5 @@ let dummyImages = [
                 "id": 16
             }
         ]
+
+export {dummyAccounts, dummyCollections, dummyImages}
