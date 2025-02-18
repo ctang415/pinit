@@ -53,7 +53,7 @@ let dummyCollections = [
 let dummyImages = [
             {
                 "link": "https://media.cntravellerme.com/photos/647f6126d49d9911e8a60b03/16:9/w_4240,h_2385,c_limit/BestCitiesInTheWorld-2020-Bergen,%20Norway-GettyImages-1169113458.jpg", 
-                "tags": ["travel", "city", "norway", "mountains"],
+                "tags": ["exploration", "travel", "city", "norway", "mountains"],
                 "id": 1
             },
             {

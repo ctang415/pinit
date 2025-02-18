@@ -8,7 +8,7 @@ const Display = ({collection}) => {
                 <div className="flex justify-center gap-20">
                     {dummyCollections.map(collection  => {
                         return (
-                            <div className="flex flex-col w-60">
+                            <div className="flex flex-col w-60 border-2 rounded-xl border-zinc-800">
                                 <div className="grid grid-cols-2 h-40">
                                     {collection.imagesInCollection.map(img => {
                                         return (
@@ -18,7 +18,7 @@ const Display = ({collection}) => {
                                         )
                                     })}
                                 </div>
-                                <div>
+                                <div className="p-2">
                                     <p className="font-bold">{collection.title}</p>
                                     <p>{collection.creator}</p>
                                 </div>

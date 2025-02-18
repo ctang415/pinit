@@ -1,7 +1,7 @@
 
-const Input = ({type}) => {
+const Input = ({type, handleChange}) => {
     return (
-        <input type={type} className="rounded-lg p-2 bg-zinc-900 min-w-sm focus:outline-none"></input>
+        <input onChange={handleChange} type={type} className="rounded-lg p-2 bg-zinc-900 min-w-sm focus:outline-none"></input>
     )
 }
 
