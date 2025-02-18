@@ -5,21 +5,25 @@ const Display = ({collection}) => {
     if (collection) {
         return (
             <div>
-                <div className="flex gap-10">
+                <div className="flex justify-center gap-20">
                     {dummyCollections.map(collection  => {
                         return (
-                            <div className="flex flex-col">
-                                {collection.imagesInCollection.map(img => {
-                                    return (
-                                        <>
-                                            <Image resize={true} image={img.imageId} />
-                                        </>
-                                    )
-                                })}
-                                <p className="font-bold">{collection.title}</p>
-                                <p>{collection.creator}</p>
+                            <div className="flex flex-col w-60">
+                                <div className="grid grid-cols-2 h-40">
+                                    {collection.imagesInCollection.map(img => {
+                                        return (
+                                            <div className="overflow-hidden">
+                                                <Image resize={true} image={img.imageId} />
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                                <div>
+                                    <p className="font-bold">{collection.title}</p>
+                                    <p>{collection.creator}</p>
+                                </div>
                             </div>
-                            )
+                        )
                     })
                     }
                 </div>
@@ -27,13 +31,15 @@ const Display = ({collection}) => {
         )
     } else {
         return (
-            <div className="flex flex-wrap justify-between items-center">
-                {dummyImages.map(image => {
-                    return (
-                        <Image resize={false} image={image}/>
-                    )
-                })
-                }
+            <div>
+                <div className="flex flex-wrap justify-between items-center">
+                    {dummyImages.map(image => {
+                        return (
+                            <Image resize={false} image={image}/>
+                        )
+                    })
+                    }
+                </div>
             </div>
         )
 
