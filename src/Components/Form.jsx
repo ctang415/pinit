@@ -23,12 +23,17 @@ const Form = () => {
     }
 
     function submitLogin (e, account, password) {
+        setError("");
         e.preventDefault();
         let findAccount = dummyAccounts.find(x => x.email == account);
-        if (account == findAccount.email && password == findAccount.password) {
-            alert("login success");
+        if (!findAccount) {
+            setError("Login failed.");
         } else {
-            alert("login failed");
+            if (account == findAccount.email && password == findAccount.password) {
+                alert("login success");
+            } else {       
+                setError("Login failed.");
+            }
         }
     }
 
@@ -56,6 +61,7 @@ const Form = () => {
                     <Input handleChange={handleAccountChange} type={"email"}/>
                     <label>Password</label>
                     <Input handleChange={handlePasswordChange} type={"password"}/>
+                    <p className="text-red-600 font-bold">{error}</p>
                     <div className="flex justify-between">
                         <Button text={"Cancel"} func={""}/>
                         <Button type={true} text={"Login"}/>
