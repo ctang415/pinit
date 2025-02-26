@@ -7,6 +7,8 @@ const Form = () => {
     let path = window.location.pathname;
     const [account, setAccount] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const [confirm, setConfirm] = useState("");
 
     function handleAccountChange(e) {
         setAccount(e.target.value);
@@ -16,6 +18,10 @@ const Form = () => {
         setPassword(e.target.value);
     }
 
+    function handlePasswordConfirm(e) {
+        setConfirm(e.target.value);
+    }
+
     function submitLogin (e, account, password) {
         e.preventDefault();
         let findAccount = dummyAccounts.find(x => x.email == account);
@@ -23,6 +29,21 @@ const Form = () => {
             alert("login success");
         } else {
             alert("login failed");
+        }
+    }
+
+    function createAccount(e, account, password, confirm) {
+        setError("");
+        e.preventDefault();
+        let findAccount = dummyAccounts.find(x => x.email == account);
+        if (findAccount) {
+            setError("Account already exists.");
+        } else {
+            if (password !== confirm) {
+                setError("Passwords do not match.");
+            } else {
+                dummyAccounts.push({"email": account, "password": password});
+            }
         }
     }
 
@@ -45,14 +66,15 @@ const Form = () => {
     } else {
         return (
             <div className="flex justify-center">
-                <form className="flex flex-col gap-2 bg-zinc-800 rounded-3xl py-10 px-6">
+                <form onSubmit={(e) => createAccount(e, account, password, confirm)} className="flex flex-col gap-2 bg-zinc-800 rounded-3xl py-10 px-6">
                     <h1 className="text-3xl text-center ">Create a PinIt Account</h1>
                     <label>Email</label>
-                    <Input type={"email"}/>
+                    <Input handleChange={handleAccountChange} type={"email"}/>
                     <label>Password</label>
-                    <Input type={"password"}/>
+                    <Input handleChange={handlePasswordChange} type={"password"}/>
                     <label>Confirm Password</label>
-                    <Input type={"password"}/>
+                    <Input handleChange={handlePasswordConfirm} type={"password"}/>
+                    <p className="text-red-600 font-bold">{error}</p>
                     <div className="flex justify-between">
                         <Button text={"Cancel"} func={""}/>
                         <Button type={true} text={"Sign up"}/>
